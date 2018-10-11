@@ -3,7 +3,7 @@
 
   "name": "JIRA Analyzer Plugin",
   "description": "This extension will analyze JIRA issues",
-  "version": "2.0",
+  "version": "2.1",
 
   "content_scripts": [{
     "matches": ["<all_urls>"],
@@ -14,6 +14,5 @@
    "default_icon": "icon.png",
    "default_popup": "popup.html"
   },
-  "permissions": ["activeTab"],
-   "content_security_policy": "script-src 'self' https://www.gstatic.com/; object-src 'self'"
+  "permissions": ["activeTab"]
 }

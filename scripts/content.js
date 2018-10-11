@@ -1,9 +1,8 @@
 // Listen for messages
 
-//console.log("UPDATED v4.5 /////////////////////////////////////////////////")
+//console.log("UPDATED v2.6 /////////////////////////////////////////////////")
 
 chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
-    // console.log("something happening from the extension", sender);
 
     var container = document.querySelector('#issuetable tbody');
     var issues = container.querySelectorAll('tr')
@@ -21,8 +20,6 @@ chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
         }
         
     })
-
-    // console.log(JSON.stringify([...data]));
 
     var result = JSON.stringify([...data])
     

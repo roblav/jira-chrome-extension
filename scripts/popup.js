@@ -7,19 +7,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     chrome.tabs.query({active: true, currentWindow: true}, tabs => {
 
-      console.log(tabs[0].id)
-
       chrome.tabs.sendMessage(tabs[0].id, {data: "hello"}, response => {
-        createTable(JSON.parse(response.data))
+
+        if (chrome.runtime.lastError) {
+          // An error occurred :(
+          displayError(chrome.runtime.lastError)
+          console.log("ERROR: ", chrome.runtime.lastError);
+        }
+        if (response) {
+          createTable(JSON.parse(response.data))
+        }
+
       });
-      
+
     });
 
   });
 
 });
 
+function displayError(msg) {
+  var errorMsg = document.createElement("p");
+  errorMsg.innerHTML = msg.message
+  document.getElementById("container").appendChild(errorMsg);
+}
+
 function createTable(issues){
+
+  // If a table exists delete it first
+  var oldTable = document.getElementById("resultsTable");
+  if (oldTable) {
+    oldTable.remove();
+  }
+
   var resultsTable = document.createElement("table");
   resultsTable.setAttribute("id", "resultsTable");
   var row = resultsTable.insertRow();
