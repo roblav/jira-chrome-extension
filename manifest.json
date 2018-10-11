@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "JIRA Analyzer Plugin",
+  "description": "This extension will analyze JIRA issues",
+  "version": "2.0",
+
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["scripts/content.js"],
+    "run_at": "document_end"
+  }],
+  "browser_action": {
+   "default_icon": "icon.png",
+   "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab"],
+   "content_security_policy": "script-src 'self' https://www.gstatic.com/; object-src 'self'"
+}

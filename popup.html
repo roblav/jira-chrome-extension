@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <title>JIRA Analyzer</title>
+    <script src="/scripts/popup.js"></script>
+    <style>
+      .container {
+        max-height: 600px;
+        min-height: 300px;
+        width: 250px;
+        border: 2px solid rgba(0,0,0,0.1);
+        border-radius: 5px;
+        background: white;
+        padding: 10px;
+      }
+      table, th, td {
+        font-size: 13px;
+        border: 1px solid white;
+        padding: 10px;
+      }
+      td {
+        background-color: #d5ecff;
+      }
+      th {
+        background-color: #061929;
+        color: #fff;
+      }
+      .table-foot td {
+        background-color: #061929;
+        color: #fff;
+      }
+      button {
+        background-color: deepskyblue;
+        color: #fff;
+        font-size: 14px;
+        border-radius: 10px;
+        padding: 5px 10px;
+        font-weight: bold;
+      }
+      button:hover {
+        background-color: rgb(4, 99, 131);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" class="container">
+      <h1>JIRA Analyzer</h1>
+      <button id="checkPage">Check this page now!</button>
+
+    </div>
+  </body>
+</html>
